@@ -1,4 +1,7 @@
 FROM {{ image  }}
+ARG GITHUB_TOKEN
+ARG GITHUB_USER
+ARG GITHUB_EMAIL
 COPY {{ entrypoint_path }} /entrypoint.sh
 RUN chown -R {{ user }}:{{ user }} /entrypoint.sh
 COPY {{ rvm_env_path }} /rvm_env.sh
